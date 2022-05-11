@@ -1,18 +1,44 @@
 # Consutra uma matriz A de tamanho 10 x 10 com valores inteiros e randômicos.
 # Depois: Imprima o resultado da soma de todos os valores da matriz no terminal;
 # E, crie uma nova matriz B, no qual cada item seja o valor da matriz A * 3;
-
 from random import randint
 
-matrizA = []
-for linha in range(10):
-    linha = []
-for coluna in range(10):
-    linha.append(randint(0, 100))
-    matrizA.append(linha)
-print(matrizA)
-somaTotal = 0
-for linha in range(len(matrizA)):
-        for coluna in range(len(matrizA)):
-            somaTotal += matrizA[linha][coluna]
-print('Temos aqui a soma total da matriz A: ', somaTotal)
+matriz_a = []
+for i in range(10):
+
+    matriz_aux = []
+
+    for j in range(10):
+        matriz_aux.append(randint(0, 100))
+
+    matriz_a.append(matriz_aux)
+
+for linha in matriz_a:
+    print(linha)
+
+print('\n \n')
+
+
+resultado_soma = 0
+for l in matriz_a:
+    for c in l:
+        resultado_soma += c
+
+print(f'Resultado da Soma = {resultado_soma}')
+
+
+matriz_b = []
+for l in range(0, len(matriz_a)):
+    lista_auxiliar = []
+
+    for c in range(0, len(matriz_a[l])):
+        resultado_multiplicacao = matriz_a[l][c] * 3
+        lista_auxiliar.append(resultado_multiplicacao)
+
+    matriz_b.append(lista_auxiliar)
+print(matriz_b)
+
+
+
+
+
